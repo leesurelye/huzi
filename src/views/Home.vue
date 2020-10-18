@@ -2,8 +2,7 @@
   <el-container class="home">
     
     <el-header>
-       <el-button type="success" icon="el-icon-tickets" @click="single">单 </el-button>
-       <el-button type="primary" icon="el-icon-document-copy" @click="double">双</el-button>
+       
         <el-button class="exit" icon="el-icon-switch-button" type="danger" @click="logout">退出</el-button>
     </el-header>
     <el-container>

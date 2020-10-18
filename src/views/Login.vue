@@ -56,11 +56,10 @@ export default {
         if(!valid) return; 
 
         post('/login',this.loginForm)
-        .then(res=>{ 
-            
+        .then(res=>{  
            this.$message.success(res.data.msg)
            window.sessionStorage.setItem('token',res.data.token) 
-           this.$router.push('/index/save')
+           this.$router.push('/index/single')
         }).catch(err=>{
           this.$message.error(err)
         })

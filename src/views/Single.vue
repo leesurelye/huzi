@@ -1,15 +1,17 @@
 
 <template>
-  <div >
+  <div>
+    <el-button type="success" icon="el-icon-tickets" @click="single">单 </el-button>
+    <el-button type="primary" icon="el-icon-document-copy" @click="double">双</el-button>
     <h4>存储对象</h4>
+    
     <el-card>
       <ObjectForm @getFormData='receiveObjectData' @updateAttr="reviceattribut"></ObjectForm>
     </el-card>
       <div class="btn-group">
         <el-button @click="cancel = false">取消</el-button>
         <el-button type="primary" @click="submitForm(formData)">提交</el-button>
-      </div>
-    
+      </div> 
   </div>
 </template>
 
@@ -31,7 +33,16 @@ export default {
       this.formData=data  
     },
     reviceattribut(attr){ 
+      
       this.formData['attribute']=JSON.stringify(attr)  
+    },
+    single() {
+      
+      this.$router.replace("/index/single")
+    },
+    double() {
+       
+      this.$router.replace("/index/double")
     },
     submitForm() {
       post('/submit',this.formData)
